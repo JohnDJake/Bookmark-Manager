@@ -1,21 +1,19 @@
 {
   "name": "bookmark-manager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kray93/Bookmark-Manager.git"
+    "url": "git+https://github.com/JohnDJake/Bookmark-Manager.git"
   },
-  "author": "mtrupiano",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kray93/Bookmark-Manager/issues"
-  },
-  "homepage": "https://github.com/Kray93/Bookmark-Manager#readme",
+  "author": "John Jacobson",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
