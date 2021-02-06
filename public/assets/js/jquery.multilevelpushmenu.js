@@ -301,8 +301,10 @@
 
 			// Create Back item DOM elements
 			function createBackItem( $levelHolder ) {
+				console.log($levelHolder.parent().parent().parent().css("background-color"));
 				var $backItem = $( "<div />" )
 				    .attr( { "class" : instance.settings.backItemClass } )
+					.css("background-color", $levelHolder.parent().parent().parent().css("background-color"))
 				    .appendTo( $levelHolder ),
 				    $backItemAnchor = $( "<a />" )
 				    .prop( { "href" : "#" } )
