@@ -148,7 +148,7 @@ function editBM(id) {
     displayBM({ id }, (bm) => {
         $("input[name=bookmark]").val(bm.name);
         $("input[name=bmurl]").val(bm.url);
-        $("select[name=bmcolor]").val(bm.color).formSelect();
+        $("select[name=bmcolor]").val(bm.color).trigger("change").formSelect();
         $("textarea[name=bmcomment]").val(bm.comment);
         const collectionIDs = bm.Collections.map(
             (collection) => collection.collectionID
@@ -188,7 +188,7 @@ function editBM(id) {
 function editCollection(id) {
     displayCollect({ id }, (collection) => {
         $("input[name=collection]").val(collection.name);
-        $("select[name=collectioncolor]").val(collection.color).formSelect();
+        $("select[name=collectioncolor]").val(collection.color).trigger("change").formSelect();
         $(`select[name=collectionparent] option[value=${id}]`).attr("disabled", true);
         $("select[name=collectionparent]").val(collection.ParentCollection).formSelect();
         $("#collectForm").on("submit", (event) => {
