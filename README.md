@@ -44,6 +44,8 @@ or install and
 1. Run `npm start`
 2. Navigate to localhost:8080
 
+![screenshot of the app](public/assets/imgs/screenshot.png)
+
 ## Contributing
 
 Feel free to fork/pull. Use descriptive comments and commit messages.
