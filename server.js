@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
 const express = require("express");
 const session = require("express-session");
@@ -13,56 +11,29 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(
-  session({
+app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 2, // 2 hours
-    },
-  })
-);
+    cookie: { maxAge: 1000 * 60 * 60 * 2 } // 2 hours
+}));
 
 app.use(express.static(__dirname + "/public"));
-app.use(
-  "/assets/materialize",
-  express.static(__dirname + "/node_modules/materialize-css/dist")
-);
-app.use(
-  "/assets/jquery",
-  express.static(__dirname + "/node_modules/jquery/dist")
-);
+app.use("/assets/materialize", express.static(__dirname + "/node_modules/materialize-css/dist"));
+app.use("/assets/jquery", express.static(__dirname + "/node_modules/jquery/dist"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine(
-  "handlebars",
-  exphbs({ defaultLayout: "main", helpers: require("./helpers/colorshelper") })
-);
+app.engine("handlebars", exphbs({ defaultLayout: "main", helpers: require("./helpers/colorshelper") }));
 app.set("view engine", "handlebars");
 
 // Controllers
-const userController = require("./controllers/userController");
-app.use(userController);
-
-const collectionController = require("./controllers/collectionController");
-app.use("/api/collections", collectionController);
-
-const bookmarkController = require("./controllers/bookmarkController");
-app.use("/api/bookmarks", bookmarkController);
-
-const tagController = require("./controllers/tagController");
-app.use("/api/tags", tagController);
-
+app.use(require("./controllers/userController"));
+app.use("/api/collections", require("./controllers/collectionController"));
+app.use("/api/bookmarks", require("./controllers/bookmarkController"));
+// app.use("/api/tags", require("./controllers/tagController"));
 app.use(require("./controllers/listRenderer"));
 app.use(require("./controllers/modalRenderer"));
 
-require("./routes/api-routes")(app);
-
-db.sequelize.sync({ force: process.env.FORCE_SYNC }).then(function () {
-  app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-  });
-});
+db.sequelize.sync({ force: process.env.FORCE_SYNC }).then(() => app.listen(PORT, () => console.log("App listening on PORT " + PORT)));
