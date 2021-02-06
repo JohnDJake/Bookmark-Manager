@@ -12,7 +12,8 @@ i.fas {
   display: none;
   padding: 2vh;
   margin-top: 25vh;
-  border-radius: 40px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 #loginDiv {
@@ -22,19 +23,4 @@ i.fas {
 
 #form {
   margin: 1vh 0;
-}
-
-#tagFormDiv {
-  background-color: powderblue;
-  border: outset 12px steelblue;
-}
-
-#bmFormDiv {
-  background-color: mistyrose;
-  border: outset 12px lightcoral;
-}
-
-#collectFormDiv {
-  background-color: lightgreen;
-  border: outset 12px seagreen;
 }
