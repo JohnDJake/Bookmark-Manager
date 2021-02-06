@@ -11,7 +11,7 @@
   position: absolute;
   overflow: hidden;
   top: 0;
-  background: rebeccapurple; /* If removed removes color from the front (first level) */
+  background: royalblue;
   width: auto;
   min-height: 100%;
   font-family: "Open Sans Condensed", sans-serif;
@@ -22,9 +22,9 @@
 .multilevelpushmenu_wrapper .ltr {
   margin-left: -100%;
   left: 0;
-  -moz-box-shadow: 5px 0 5px -5px #1f4164; /* if removed does not remove color from anywhere */
-  -webkit-box-shadow: 5px 0 5px -5px #1f4164;
-  box-shadow: 5px 0 5px -5px #1f4164; /* just shadows here */
+  -moz-box-shadow: 5px 0 5px -5px #000;
+  -webkit-box-shadow: 5px 0 5px -5px #000;
+  box-shadow: 5px 0 5px -5px #000;
   filter: progid:DXImageTransform.Microsoft.Shadow(color=#1f4164,direction=90,strength=2);
 }
 
@@ -35,11 +35,6 @@
   -webkit-box-shadow: 5px 0 5px 5px #1f4164;
   box-shadow: 5px 0 5px 5px #1f4164;
   filter: progid:DXImageTransform.Microsoft.Shadow(color=#1f4164,direction=270,strength=2);
-}
-
-.multilevelpushmenu_wrapper .multilevelpushmenu_inactive {
-  background: #2e6196;
-  /* makes the color get a tint darker the further into the menu you go */
 }
 
 .multilevelpushmenu_wrapper h2 {
@@ -59,13 +54,13 @@
 
 .multilevelpushmenu_wrapper li {
   cursor: pointer;
-  border-top: 1px solid #295685;
+  border-top: 1px solid #333;
   /* adds miniscule border to the top of the list items */
   padding: 0.4em 0.4em 0.4em 0.4em;
 }
 
 .multilevelpushmenu_wrapper li:last-child {
-  border-bottom: 1px solid #295685;
+  border-bottom: 1px solid #333;
   /* adds miniscule border to the bottom of the list items */
 }
 
@@ -94,10 +89,7 @@
 .multilevelpushmenu_wrapper .backItemClass {
   display: block;
   padding: 0.4em 0.4em 0.4em 0.4em;
-  background: #2e6196;
-  /* sets the shade of the back button tobe a little darker than the rest */
-  border-top: 1px solid #295685;
-  /* adds a top border to the back button */
+  border-top: 1px solid #333;
 }
 
 .multilevelpushmenu_wrapper .floatRight {

@@ -1,5 +1,4 @@
 <script src="/assets/js/script.js"></script>
-{{!-- TODO: Menu, tabs, and BM's, Modals --}}
 <div style="display: inline;">
     <div id="menu">
         <h2><i class="fa fa-reorder"></i>My Bookmarks</h2>
@@ -43,7 +42,7 @@
                     </div>
                     <br>
                     <div class="input-field col s6">
-                        <select name="bmcollections" id="options" multiple>
+                        <select name="bmcollections" multiple>
                             {{#each collections}}
                             {{> collectionPartial}}
                             {{/each}}
@@ -51,7 +50,7 @@
                         <label for="bmcollections">Add to Folder(s)</label>
                     </div>
                     <div class="input-field col s6">
-                        <select name="bmcolor" id="colors">
+                        <select name="bmcolor" class="color-select">
                             <option value="lightgray">White</option>
                             <option value="black">Black</option>
                             <option value="crimson">Red</option>
@@ -77,7 +76,7 @@
                     <label for="collection">Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <select name="collectioncolor" id="colors">
+                        <select name="collectioncolor" class="color-select">
                             <option value="lightgray">White</option>
                             <option value="black">Black</option>
                             <option value="crimson">Red</option>
@@ -91,7 +90,7 @@
                         <label for="collectioncolor">Color</label>
                     </div>
                     <div class="input-field col s6">
-                        <select name="collectionparent" id="options">
+                        <select name="collectionparent">
                             <option value="null">No Parent</option>
                             {{#each collections}}
                             {{> collectionPartial}}
