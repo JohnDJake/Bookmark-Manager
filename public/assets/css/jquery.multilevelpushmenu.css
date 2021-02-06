@@ -37,11 +37,6 @@
   filter: progid:DXImageTransform.Microsoft.Shadow(color=#1f4164,direction=270,strength=2);
 }
 
-.multilevelpushmenu_wrapper .multilevelpushmenu_inactive {
-  background: #2e6196;
-  /* makes the color get a tint darker the further into the menu you go */
-}
-
 .multilevelpushmenu_wrapper h2 {
   font-size: 1.5em;
   line-height: 1em;
